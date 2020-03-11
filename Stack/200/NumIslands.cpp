@@ -1,36 +1,8 @@
-# 岛屿数量
-## 题目
-Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+#include <vector>
+#include <stack>
 
-Example 1:
+using namespace std;
 
-Input:
-11110
-11010
-11000
-00000
-
-Output: 1
-Example 2:
-
-Input:
-11000
-11000
-00100
-00011
-
-Output: 3
-
-## 题解
-### 算法分析
-1. 从左到右从上到下遍历grid，设定nums=0
-2. 当grid[i][j]==1时，++nums，将pair<i, j>入队，grid[i][j]置为0
-3. 遍历队列，出队pair<i, j>，判断<i,j>的四周是否存在1，如果存在则入队，并置为0
-### 复杂度分析
-+ 时间复杂度：O(m*n)
-+ 空间复杂度：O(min(m,n))
-### 源码
-```C++ []
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -45,13 +17,13 @@ public:
                 if (grid[i][j] == '1')
                 {
                     ++nums;
-                    queue<pair<int, int>> arounds;
+                    stack<pair<int, int>> arounds;
                     arounds.push(pair<int, int>(i, j));
                     grid[i][j] = '0';
 
                     while (!arounds.empty())
                     {
-                        pair<int, int> pos = arounds.front();
+                        pair<int, int> pos = arounds.top();
                         arounds.pop();
 
                         int r = pos.first;
