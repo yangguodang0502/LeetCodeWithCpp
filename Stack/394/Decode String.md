@@ -1,4 +1,4 @@
-# 用队列实现栈
+# 字符串解码
 ## 题目
 Given an encoded string, return its decoded string.
 
