@@ -27,6 +27,7 @@ return its depth = 3.
 + 时间复杂度：O(n), n为树节点个数
 + 空间复杂度：O(n)，递归调用栈暂用额外空间
 ### 源码
+```C++ []
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
