@@ -42,6 +42,7 @@
         "list": "cpp",
         "stack": "cpp",
         "queue": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "unordered_set": "cpp"
     }
 }

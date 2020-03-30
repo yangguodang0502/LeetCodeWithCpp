@@ -10,23 +10,23 @@ public:
     {
         if (contains(key))
             return;
-        m_elements.push_front(key);
+        mElements.push_front(key);
     }
 
     void remove(int key)
     {
         if (!contains(key))
             return;
-        m_elements.remove(key);
+        mElements.remove(key);
     }
 
     bool contains(int key)
     {
-        auto iter = find(m_elements.begin(), m_elements.end(), key);
-        return iter != m_elements.end();
+        auto iter = find(mElements.begin(), mElements.end(), key);
+        return iter != mElements.end();
     }
 private:
-    list<int> m_elements;
+    list<int> mElements;
 };
 
 class MyHashSet {
