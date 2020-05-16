@@ -41,7 +41,7 @@ target is a lowercase letter.
 
 ## 题解
 ### 算法分析
-1. 初始条件：left = 02,right = letters.size() - 1,mid = left + (right - left) / 2
+1. 初始条件：left = 0,right = letters.size() - 1,mid = left + (right - left) / 2
 2. 终止条件：left == right => rerturn letters[0]
             letters[mid] > target and letters[mid - 1] <= target => return letters[mid]
             letters[mid] <= target and letters[mid + 1] > target => return letters[mid + 1]
