@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include "BinaryTree/297/Codec.h"
-#include "BinarySearch/658/FindClosestElements.h"
+#include "labuladong/188/maxProfit.h"
 
 using namespace std;
 
@@ -21,8 +21,8 @@ int main()
     cout << endl;
 
     Solution solution;
-    vector<int> vec {1,1,1,10,10,10};
-    solution.findClosestElements(vec, 1, 9);
+    vector<int> nums {3,2,6,5,0,3};
+    int ret = solution.maxProfit(2, nums);
     
     getchar();
 }
