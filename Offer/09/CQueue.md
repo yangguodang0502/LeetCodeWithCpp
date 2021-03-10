@@ -24,10 +24,55 @@
 
 ## 题解
 ### 算法分析
-1. 公式：prefix = strs[0], prefix = commonPrefix(prefix, strs[i]), i = 1 : strs.length() - 1
-2. 遍历strs获取当前的公共前缀prefix，直到prefix为空或者遍历结束
+1. 定义left,right两个栈
+2. 入队时将元素入left栈
+3. 出队时将如果right栈不为空则将其栈顶元素出栈
+4. 否则如果left栈为空返回-1
+5. 否则遍历left栈将元素依次压入right栈
+6. 将right栈顶元素出栈
 ### 复杂度分析
-+ 时间复杂度：O(m*n)，m为strs长度，n为strs[i]长度
-+ 空间复杂度：O(1)
++ 时间复杂度：入队：O(1)，出队：O(n)
++ 空间复杂度：O(n)
 ### 源码
 ```C++ []
+class CQueue {
+private:
+    stack<int> m_left;
+    stack<int> m_right;
+
+public:
+    CQueue() {
+
+    }
+    
+    void appendTail(int value) {
+        m_left.push(value);
+    }
+    
+    int deleteHead() {
+        if (!m_right.empty()) {
+            int val = m_right.top();
+            m_right.pop();
+            return val;
+        }
+        if (m_left.empty()){
+            return -1;
+        }
+        while (!m_left.empty())
+        {
+            int val = m_left.top();
+            m_right.push(val);
+            m_left.pop();
+        }
+        int val = m_right.top();
+        m_right.pop();
+        return val;
+    }
+};
+
+/**
+ * Your CQueue object will be instantiated and called as such:
+ * CQueue* obj = new CQueue();
+ * obj->appendTail(value);
+ * int param_2 = obj->deleteHead();
+ */
