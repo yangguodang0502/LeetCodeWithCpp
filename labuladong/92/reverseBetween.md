@@ -40,7 +40,7 @@ The number of nodes in the list is n.
 10. head->next = reverseBetween(head->next, l-1, r-1)
 11. return head
 + 时间复杂度：O(n)
-+ 空间复杂度：O(1)
++ 空间复杂度：O(n)
 ### 源码
 ```C++ []
 class Solution {
