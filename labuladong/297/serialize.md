@@ -25,8 +25,8 @@ Note: Do not use class member/global/static variables to store states. Your seri
 2. 反序列化通过分割字符串为字符串数组，借助队列存储存储每层节点并遍历该层节点的左右子树
     ，并通过数组的下标递增构造树节点
 ### 复杂度分析
-+ 时间复杂度：O(n), n为树节点个数
-+ 空间复杂度：O(n)，队列占用空间
++ 时间复杂度：O(n)
++ 空间复杂度：O(n)
 ### 源码
 ```C++ []
 class Codec {
